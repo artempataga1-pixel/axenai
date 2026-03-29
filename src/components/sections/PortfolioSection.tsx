@@ -6,11 +6,11 @@ import dynamic from 'next/dynamic';
 const Scene3D = dynamic(() => import('@/components/ui/Scene3D'), { ssr: false });
 
 const projects = [
-  { title: 'APEX DETAIL', desc: 'Премиальный детейлинг-центр — полировка, керамика, PPF-защита. Лендинг под запись клиентов.', tags: ['Лендинг', 'Автодетейлинг'], href: 'https://apex-detail-pabl.vercel.app/' },
+  { title: 'Свежий Климат', desc: 'Строительная компания — фасадные работы, внутренняя отделка под ключ, утепление.', tags: ['Лендинг', 'Строительство'], href: 'https://svezhiyklimat.vercel.app/' },
   { title: 'NOIR Barbershop', desc: 'Мужской барбершоп в Москве — стрижки, бритьё, spa. Лендинг с онлайн-записью.', tags: ['Лендинг', 'Барбершоп'], href: 'https://barbershop-noir.vercel.app/' },
   { title: 'LUMIÈRE BEAUTÉ', desc: 'Премиальный салон красоты — маникюр, окрашивание, spa. Лендинг с онлайн-записью.', tags: ['Лендинг', 'Салон красоты'], href: 'https://lumiere-tawny.vercel.app/' },
   { title: 'CleanPro', desc: 'Клининговая компания с калькулятором стоимости — квартиры, дома, послеремонтная уборка.', tags: ['Лендинг', 'Клининг'], href: 'https://cleaning-landing-pi.vercel.app/' },
-  { title: 'Свежий Климат', desc: 'Строительная компания — фасадные работы, внутренняя отделка под ключ, утепление.', tags: ['Лендинг', 'Строительство'], href: 'https://svezhiyklimat.vercel.app/' },
+  { title: 'APEX DETAIL', desc: 'Премиальный детейлинг-центр — полировка, керамика, PPF-защита. Лендинг под запись клиентов.', tags: ['Лендинг', 'Автодетейлинг'], href: 'https://apex-detail-pabl.vercel.app/' },
 ];
 
 export default function PortfolioSection() {
