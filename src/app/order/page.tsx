@@ -23,6 +23,7 @@ const budgets = [
 
 export default function OrderPage() {
   const [form, setForm] = useState({ name: '', contact: '', siteType: '', description: '', budget: '' });
+  const [agreed, setAgreed] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -247,29 +248,57 @@ export default function OrderPage() {
                   </div>
                 </div>
 
+                {/* Согласие на обработку персональных данных */}
+                <label style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', cursor: 'pointer' }}>
+                  <div style={{ position: 'relative', flexShrink: 0, marginTop: '2px' }}>
+                    <input
+                      type="checkbox"
+                      checked={agreed}
+                      onChange={(e) => setAgreed(e.target.checked)}
+                      style={{ position: 'absolute', opacity: 0, width: 0, height: 0 }}
+                    />
+                    <div style={{
+                      width: '16px', height: '16px',
+                      border: `1.5px solid ${agreed ? 'rgba(0,229,255,0.7)' : 'rgba(0,229,255,0.25)'}`,
+                      background: agreed ? 'rgba(0,180,255,0.15)' : 'transparent',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      transition: 'all 0.2s',
+                    }}>
+                      {agreed && (
+                        <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                          <path d="M1 4L3.5 6.5L9 1" stroke="#00e5ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                    </div>
+                  </div>
+                  <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.7 }}>
+                    Я согласен(а) на обработку персональных данных в соответствии с{' '}
+                    <Link href="/privacy" style={{ color: 'rgba(0,229,255,0.5)', textDecoration: 'none', borderBottom: '1px solid rgba(0,229,255,0.2)' }}>
+                      политикой конфиденциальности
+                    </Link>
+                  </span>
+                </label>
+
                 {/* Кнопка */}
                 <button
                   type="submit"
-                  disabled={loading}
+                  disabled={loading || !agreed}
                   style={{
                     fontFamily: 'JetBrains Mono, monospace', fontSize: '0.85rem', fontWeight: 700,
                     letterSpacing: '0.15em', textTransform: 'uppercase',
                     padding: '1.1rem 2rem', width: '100%',
-                    background: loading ? 'rgba(0,180,255,0.05)' : 'rgba(0,180,255,0.12)',
-                    border: '1.5px solid rgba(0,229,255,0.7)',
-                    color: '#00e5ff', cursor: loading ? 'not-allowed' : 'pointer',
-                    boxShadow: '0 0 30px rgba(0,180,255,0.2)',
+                    background: (loading || !agreed) ? 'rgba(0,180,255,0.05)' : 'rgba(0,180,255,0.12)',
+                    border: `1.5px solid ${agreed ? 'rgba(0,229,255,0.7)' : 'rgba(0,229,255,0.2)'}`,
+                    color: agreed ? '#00e5ff' : 'rgba(0,229,255,0.3)',
+                    cursor: (loading || !agreed) ? 'not-allowed' : 'pointer',
+                    boxShadow: agreed ? '0 0 30px rgba(0,180,255,0.2)' : 'none',
                     transition: 'all 0.3s', opacity: loading ? 0.6 : 1,
                   }}
-                  onMouseEnter={(e) => { if (!loading) { e.currentTarget.style.background = 'rgba(0,180,255,0.22)'; e.currentTarget.style.boxShadow = '0 0 50px rgba(0,180,255,0.4)'; } }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(0,180,255,0.12)'; e.currentTarget.style.boxShadow = '0 0 30px rgba(0,180,255,0.2)'; }}
+                  onMouseEnter={(e) => { if (!loading && agreed) { e.currentTarget.style.background = 'rgba(0,180,255,0.22)'; e.currentTarget.style.boxShadow = '0 0 50px rgba(0,180,255,0.4)'; } }}
+                  onMouseLeave={(e) => { if (agreed) { e.currentTarget.style.background = 'rgba(0,180,255,0.12)'; e.currentTarget.style.boxShadow = '0 0 30px rgba(0,180,255,0.2)'; } }}
                 >
                   {loading ? '// ОТПРАВКА...' : 'Отправить заявку →'}
                 </button>
-
-                <p style={{ textAlign: 'center', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.15)', letterSpacing: '0.08em' }}>
-                  Без предоплаты · Ответ за 15 минут · Без спама
-                </p>
 
                 <p style={{ textAlign: 'center', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,255,255,0.18)', lineHeight: 1.7 }}>
                   Нажимая «Отправить заявку», вы соглашаетесь с условиями{' '}
