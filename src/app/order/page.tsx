@@ -111,7 +111,6 @@ export default function OrderPage() {
             {/* Мини-факты */}
             {[
               { label: 'Ответ', value: 'до 15 минут' },
-              { label: 'Предоплата', value: 'не требуется' },
               { label: 'Срок', value: 'от 72 часов' },
             ].map((f) => (
               <div key={f.label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.65rem 0', borderBottom: '1px solid rgba(0,180,255,0.08)' }}>
