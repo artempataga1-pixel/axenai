@@ -633,7 +633,7 @@ body::before {
   padding: 0.85rem 2rem;
   background: rgba(0, 229, 255, 0.08);
   border: 1px solid rgba(0, 229, 255, 0.5);
-  color: #00e5ff;
+  color: rgba(0, 200, 230, 0.7);
   cursor: pointer;
   transition: all 0.25s;
   position: relative;
@@ -643,6 +643,7 @@ body::before {
   background: rgba(0, 229, 255, 0.15);
   box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), inset 0 0 20px rgba(0, 229, 255, 0.08);
   border-color: #00e5ff;
+  color: #00e5ff;
 }
 
 .hero-btn-green {
@@ -654,7 +655,7 @@ body::before {
   padding: 0.85rem 2rem;
   background: rgba(0, 180, 255, 0.08);
   border: 1px solid rgba(0, 180, 255, 0.5);
-  color: #00e5ff;
+  color: rgba(0, 200, 230, 0.7);
   cursor: pointer;
   transition: all 0.25s;
   position: relative;
@@ -664,6 +665,7 @@ body::before {
   background: rgba(0, 180, 255, 0.15);
   box-shadow: 0 0 20px rgba(0, 180, 255, 0.4), inset 0 0 20px rgba(0, 180, 255, 0.08);
   border-color: #00e5ff;
+  color: #00e5ff;
 }
 
 /* ── Mobile responsive (≤ 640px) ───────────────────────────────────── */
