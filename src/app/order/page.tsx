@@ -187,6 +187,15 @@ export default function OrderPage() {
                     onFocus={(e) => Object.assign(e.target.style, inputFocusStyle)}
                     onBlur={(e) => Object.assign(e.target.style, inputStyle)}
                   />
+                  {form.contact.trim().startsWith('@') && (
+                    <p style={{ marginTop: '0.4rem', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(0,229,255,0.45)', lineHeight: 1.6 }}>
+                      Чтобы получить авто-ответ, напишите{' '}
+                      <a href="https://t.me/axenai_bussines" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(0,229,255,0.7)', textDecoration: 'none' }}>
+                        /start
+                      </a>{' '}
+                      нашему боту
+                    </p>
+                  )}
                 </OrderField>
 
                 {/* Тип сайта */}

@@ -105,5 +105,28 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Не удалось отправить заявку' }, { status: 500 });
   }
 
+  /* ── Автоответ клиенту (если указал @username) ────── */
+  const tgUsername = contact.trim().startsWith('@') ? contact.trim() : null;
+  if (tgUsername) {
+    const clientText = [
+      `👋 Привет, <b>${esc(name)}</b>!`,
+      ``,
+      `✅ Ваша заявка на разработку сайта принята.`,
+      `Мы свяжемся с вами в течение <b>15 минут</b>.`,
+      ``,
+      `📋 <b>Детали заявки:</b>`,
+      `• Тип сайта: ${esc(siteType || 'не указан')}`,
+      `• Бюджет: ${esc(budgetLabels[budget ?? ''] || 'не указан')}`,
+      ``,
+      `— Команда <b>AXEN AI</b>`,
+    ].join('\n');
+
+    await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: tgUsername, text: clientText, parse_mode: 'HTML' }),
+    }).catch(() => { /* клиент не запустил бота — игнорируем */ });
+  }
+
   return NextResponse.json({ ok: true, orderNum });
 }
