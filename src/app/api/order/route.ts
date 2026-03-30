@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 
-/* ── Счётчик заявок (в памяти, без race condition) ─── */
-let orderCounter = 0;
-function getNextOrderNumber(): number {
-  return ++orderCounter;
+/* ── Уникальный номер заявки на основе timestamp ───── */
+function getNextOrderNumber(): string {
+  const now = new Date();
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return `${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;
 }
 
 /* ── Rate limiting по IP (5 заявок в час) ─────────── */
@@ -82,7 +83,7 @@ export async function POST(req: NextRequest) {
   };
 
   const text = [
-    `📩 <b>Заявка №${orderNum}</b>`,
+    `📩 <b>Заявка #${orderNum}</b>`,
     ``,
     `👤 <b>Имя:</b> ${esc(name)}`,
     `📱 <b>Контакт:</b> ${esc(contact)}`,
