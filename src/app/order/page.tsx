@@ -25,6 +25,7 @@ export default function OrderPage() {
   const [form, setForm] = useState({ name: '', contact: '', siteType: '', description: '', budget: '' });
   const [agreed, setAgreed] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [countdown, setCountdown] = useState(5);
   const [loading, setLoading] = useState(false);
   const [visible, setVisible] = useState(false);
   const pageRef = useRef<HTMLDivElement>(null);
@@ -49,6 +50,17 @@ export default function OrderPage() {
     }
     setLoading(false);
     setSubmitted(true);
+
+    // Обратный отсчёт → редирект в бот
+    let secs = 5;
+    const timer = setInterval(() => {
+      secs -= 1;
+      setCountdown(secs);
+      if (secs <= 0) {
+        clearInterval(timer);
+        window.location.href = 'https://t.me/axenai_bussines';
+      }
+    }, 1000);
   };
 
   if (submitted) {
@@ -67,12 +79,31 @@ export default function OrderPage() {
             Свяжемся{' '}
             <span style={{ color: '#00e5ff', textShadow: '0 0 30px rgba(0,229,255,0.4)' }}>за 15 минут</span>
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '2rem' }}>
-            Заявка получена. Напишем в Telegram или на почту — обсудим задачу и назовём точную стоимость.
+          <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+            Заявка получена. Сейчас откроем бот — там придёт подтверждение.
           </p>
-          <Link href="/" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '0.9rem 2rem', background: 'rgba(0,180,255,0.1)', border: '1.5px solid rgba(0,229,255,0.6)', color: '#00e5ff', textDecoration: 'none', display: 'inline-block', transition: 'all 0.3s' }}>
-            ← На главную
-          </Link>
+
+          {/* Счётчик */}
+          <div style={{ marginBottom: '1.5rem', padding: '0.75rem 1.5rem', border: '1px solid rgba(0,229,255,0.15)', background: 'rgba(0,180,255,0.05)', display: 'inline-block' }}>
+            <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: 'rgba(255,255,255,0.35)', letterSpacing: '0.1em' }}>
+              Переходим в бот через{' '}
+            </span>
+            <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.9rem', fontWeight: 700, color: '#00e5ff' }}>
+              {countdown}с
+            </span>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'center' }}>
+            <a
+              href="https://t.me/axenai_bussines"
+              style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '0.9rem 2rem', background: 'rgba(0,180,255,0.12)', border: '1.5px solid rgba(0,229,255,0.6)', color: '#00e5ff', textDecoration: 'none', display: 'inline-block', transition: 'all 0.3s', width: '100%', textAlign: 'center', boxSizing: 'border-box' }}
+            >
+              Открыть бот сейчас →
+            </a>
+            <Link href="/" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: 'rgba(255,255,255,0.25)', textDecoration: 'none', letterSpacing: '0.08em' }}>
+              ← На главную
+            </Link>
+          </div>
         </div>
       </div>
     );
