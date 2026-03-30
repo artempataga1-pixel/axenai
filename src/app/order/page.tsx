@@ -58,7 +58,7 @@ export default function OrderPage() {
       setCountdown(secs);
       if (secs <= 0) {
         clearInterval(timer);
-        window.location.href = 'https://t.me/axenai_bussines';
+        window.location.href = 'https://t.me/axenaiweb_bot';
       }
     }, 1000);
   };
@@ -95,7 +95,7 @@ export default function OrderPage() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'center' }}>
             <a
-              href="https://t.me/axenai_bussines"
+              href="https://t.me/axenaiweb_bot"
               style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '0.9rem 2rem', background: 'rgba(0,180,255,0.12)', border: '1.5px solid rgba(0,229,255,0.6)', color: '#00e5ff', textDecoration: 'none', display: 'inline-block', transition: 'all 0.3s', width: '100%', textAlign: 'center', boxSizing: 'border-box' }}
             >
               Открыть бот сейчас →
@@ -221,7 +221,7 @@ export default function OrderPage() {
                   {form.contact.trim().startsWith('@') && (
                     <p style={{ marginTop: '0.4rem', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(0,229,255,0.45)', lineHeight: 1.6 }}>
                       Чтобы получить авто-ответ, напишите{' '}
-                      <a href="https://t.me/axenai_bussines" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(0,229,255,0.7)', textDecoration: 'none' }}>
+                      <a href="https://t.me/axenaiweb_bot" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(0,229,255,0.7)', textDecoration: 'none' }}>
                         /start
                       </a>{' '}
                       нашему боту
