@@ -58,7 +58,7 @@ export default function OrderPage() {
       setCountdown(secs);
       if (secs <= 0) {
         clearInterval(timer);
-        window.location.href = 'https://t.me/axenaiweb_bot';
+        window.location.href = 'https://t.me/m/64Dm3Vf7MDQy';
       }
     }, 1000);
   };
@@ -95,10 +95,10 @@ export default function OrderPage() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'center' }}>
             <a
-              href="https://t.me/axenaiweb_bot"
+              href="https://t.me/m/64Dm3Vf7MDQy"
               style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '0.9rem 2rem', background: 'rgba(0,180,255,0.12)', border: '1.5px solid rgba(0,229,255,0.6)', color: '#00e5ff', textDecoration: 'none', display: 'inline-block', transition: 'all 0.3s', width: '100%', textAlign: 'center', boxSizing: 'border-box' }}
             >
-              Открыть бот сейчас →
+              Написать в Telegram →
             </a>
             <Link href="/" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: 'rgba(255,255,255,0.25)', textDecoration: 'none', letterSpacing: '0.08em' }}>
               ← На главную
@@ -155,7 +155,7 @@ export default function OrderPage() {
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>ИЛИ НАПИШИ НАПРЯМУЮ</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                 <a
-                  href="https://t.me/axenai_bussines"
+                  href="https://t.me/m/64Dm3Vf7MDQy"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', color: 'rgba(0,229,255,0.7)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'color 0.2s' }}

@@ -58,7 +58,7 @@ export default function CtaSection() {
               >Оставить заявку →</button>
             </Link>
             <a
-              href="https://t.me/axenai_bussines"
+              href="https://t.me/m/64Dm3Vf7MDQy"
               target="_blank"
               rel="noopener noreferrer"
               style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '1rem 2.5rem', background: 'transparent', border: '1.5px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.6)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', transition: 'all 0.3s' }}
@@ -86,7 +86,7 @@ export default function CtaSection() {
         <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', color: '#00e5ff', letterSpacing: '0.15em' }}>AXEN_AI</span>
         <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.1em' }}>© 2026 · SYSTEM_STATUS: ONLINE</span>
         <div style={{ display: 'flex', gap: '1.5rem' }}>
-          <a href="https://t.me/axenai_bussines" target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: 'rgba(0,229,255,0.5)', textDecoration: 'none' }}>@axenai</a>
+          <a href="https://t.me/m/64Dm3Vf7MDQy" target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: 'rgba(0,229,255,0.5)', textDecoration: 'none' }}>@axenai</a>
           <a href="https://max.ru/u/f9LHodD0cOIviRaJ3XgXI4U66OOyCmSuPwwMMuVrLMDYjKs-Grm1f7JcbhU" target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: 'rgba(0,229,255,0.5)', textDecoration: 'none' }}>Max</a>
         </div>
       </div>
