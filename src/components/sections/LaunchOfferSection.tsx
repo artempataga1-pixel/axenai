@@ -70,17 +70,25 @@ export default function LaunchOfferSection() {
 
           {/* Счётчик мест */}
           <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
-            {Array.from({ length: TOTAL_SPOTS }).map((_, i) => (
-              <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px' }}>
-                <div style={{
-                  width: '56px', height: '56px', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  border: '1.5px solid rgba(0,229,255,0.7)', background: 'rgba(0,180,255,0.1)',
-                  color: '#00e5ff', fontSize: '1.3rem', fontFamily: 'JetBrains Mono, monospace',
-                  boxShadow: '0 0 20px rgba(0,180,255,0.15)',
-                }}>○</div>
-                <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.15em', color: 'rgba(0,229,255,0.7)' }}>СВОБОДНО</span>
-              </div>
-            ))}
+            {/* Место 1 — занято */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px' }}>
+              <div style={{
+                width: '56px', height: '56px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                border: '1.5px solid rgba(255,50,50,0.5)', background: 'rgba(255,50,50,0.08)',
+                color: 'rgba(255,80,80,0.8)', fontSize: '1.3rem', fontFamily: 'JetBrains Mono, monospace',
+              }}>✕</div>
+              <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.15em', color: 'rgba(255,80,80,0.7)' }}>ЗАНЯТО</span>
+            </div>
+            {/* Место 2 — свободно */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px' }}>
+              <div style={{
+                width: '56px', height: '56px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                border: '1.5px solid rgba(0,229,255,0.7)', background: 'rgba(0,180,255,0.1)',
+                color: '#00e5ff', fontSize: '1.3rem', fontFamily: 'JetBrains Mono, monospace',
+                boxShadow: '0 0 20px rgba(0,180,255,0.15)',
+              }}>○</div>
+              <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.15em', color: 'rgba(0,229,255,0.7)' }}>СВОБОДНО</span>
+            </div>
           </div>
 
           {/* Что входит */}
