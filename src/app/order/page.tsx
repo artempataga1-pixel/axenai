@@ -17,7 +17,7 @@ const siteTypes = [
 ];
 
 const budgets = [
-  { id: 'launch', label: 'Запуск — 15 000 ₽', hint: 'первые 2 места' },
+  { id: 'launch', label: 'Запуск — 15 000 ₽', hint: 'первые 2 места, одно уже занято' },
   { id: 'discuss', label: 'Обсудить индивидуально', hint: '' },
 ];
 
