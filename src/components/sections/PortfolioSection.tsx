@@ -6,6 +6,8 @@ import dynamic from 'next/dynamic';
 const Scene3D = dynamic(() => import('@/components/ui/Scene3D'), { ssr: false });
 
 const projects = [
+  { title: 'PROстранство', desc: 'Агентство e-commerce маркетинга — комплексное продвижение на маркетплейсах, аналитика и рост продаж.', tags: ['Многостраничный', 'E-commerce'], href: 'https://prostranstvoecom.ru' },
+  { title: 'Psyche', desc: 'Онлайн-практика психолога — лендинг с записью на сессии, описанием подходов и форматов работы.', tags: ['Лендинг', 'Психология'], href: 'https://project-psyche-1.vercel.app' },
   { title: 'Свежий Климат', desc: 'Строительная компания — фасадные работы, внутренняя отделка под ключ, утепление.', tags: ['Лендинг', 'Строительство'], href: 'https://svezhiyklimat.vercel.app/' },
   { title: 'NOIR Barbershop', desc: 'Мужской барбершоп в Москве — стрижки, бритьё, spa. Лендинг с онлайн-записью.', tags: ['Лендинг', 'Барбершоп'], href: 'https://barbershop-noir.vercel.app/' },
   { title: 'LUMIÈRE BEAUTÉ', desc: 'Премиальный салон красоты — маникюр, окрашивание, spa. Лендинг с онлайн-записью.', tags: ['Лендинг', 'Салон красоты'], href: 'https://lumiere-tawny.vercel.app/' },
@@ -47,7 +49,7 @@ export default function PortfolioSection() {
               Что мы умеем делать
             </h2>
             <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.95rem', marginTop: '0.75rem', maxWidth: '420px' }}>
-              Реальные сайты — без клиентской базы, но с полной отдачей на каждый проект.
+              Реальные проекты из разных ниш — каждый сделан с полным погружением в задачу бизнеса.
             </p>
           </div>
           <div className="mob-3d" style={{ flex: '0 0 180px' }}>

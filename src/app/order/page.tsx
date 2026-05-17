@@ -17,8 +17,9 @@ const siteTypes = [
 ];
 
 const budgets = [
-  { id: 'launch', label: 'Запуск — 15 000 ₽', hint: 'первые 2 места, одно уже занято' },
-  { id: 'discuss', label: 'Обсудить индивидуально', hint: '' },
+  { id: 'landing', label: 'Лендинг / 1 страница', hint: 'быстрый старт, от 72 часов' },
+  { id: 'multipage', label: 'Многостраничный сайт', hint: 'несколько разделов, сложная структура' },
+  { id: 'discuss', label: 'Обсудить индивидуально', hint: 'нестандартный проект или интеграции' },
 ];
 
 export default function OrderPage() {
@@ -183,11 +184,6 @@ export default function OrderPage() {
           opacity: visible ? 1 : 0, transform: visible ? 'none' : 'translateY(30px)',
           transition: 'opacity 0.7s 0.15s, transform 0.7s 0.15s',
         }}>
-          {/* 3D объект над формой */}
-          <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '-2rem', position: 'relative', zIndex: 0, pointerEvents: 'none' }}>
-            <Scene3D shape="icosahedron" size={120} color="#00e5ff" opacity={0.5} />
-          </div>
-
           <div className="process-card-outer" style={{ position: 'relative', zIndex: 1 }}>
             <div className="process-card-inner" style={{ padding: '2.5rem' }}>
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>

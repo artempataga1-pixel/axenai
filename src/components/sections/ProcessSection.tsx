@@ -1,9 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import dynamic from 'next/dynamic';
-
-const Scene3D = dynamic(() => import('@/components/ui/Scene3D'), { ssr: false });
 
 const steps = [
   { num: '01', title: 'Бриф за 10 минут', desc: 'Заполняешь короткую форму: ниша, стиль, задачи. Никаких долгих созвонов на старте — только если сам захочешь.' },
@@ -15,8 +12,6 @@ const steps = [
 export default function ProcessSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
-  const [size3D, setSize3D] = useState(220);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setVisible(true); },
@@ -24,13 +19,6 @@ export default function ProcessSection() {
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const update = () => setSize3D(window.innerWidth < 640 ? 150 : 220);
-    update();
-    window.addEventListener('resize', update);
-    return () => window.removeEventListener('resize', update);
   }, []);
 
   return (
@@ -62,9 +50,6 @@ export default function ProcessSection() {
               Никаких долгих брифингов<br />
               <span style={{ color: '#00e5ff' }}>Только результат</span>
             </h2>
-          </div>
-          <div className="mob-3d" style={{ flex: '0 0 220px' }}>
-            <Scene3D shape="octahedron" size={size3D} color="#00b4ff" opacity={0.75} />
           </div>
         </div>
 

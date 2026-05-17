@@ -76,7 +76,7 @@ export default function CtaSection() {
           </div>
 
           <p style={{ marginTop: '1.5rem', color: 'rgba(255,255,255,0.18)', fontSize: '0.75rem', fontFamily: 'JetBrains Mono, monospace' }}>
-            Без предоплаты до старта работ · Ответим за 15 минут
+            Ответим за 15 минут
           </p>
         </div>
       </div>

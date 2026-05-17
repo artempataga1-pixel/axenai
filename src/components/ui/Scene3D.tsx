@@ -30,9 +30,12 @@ export default function Scene3D({
     const mount = mountRef.current;
     let animId: number;
     let renderer: import('three').WebGLRenderer;
+    let active = true;
 
     (async () => {
       const THREE = await import('three');
+
+      if (!active) return;
 
       const W = mount.clientWidth  || size;
       const H = mount.clientHeight || size;
@@ -137,6 +140,7 @@ export default function Scene3D({
     })().catch(console.error);
 
     return () => {
+      active = false;
       cancelAnimationFrame(animId);
       if (renderer && mount.contains(renderer.domElement)) {
         mount.removeChild(renderer.domElement);

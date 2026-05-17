@@ -1,9 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import dynamic from 'next/dynamic';
-
-const Scene3D = dynamic(() => import('@/components/ui/Scene3D'), { ssr: false });
 
 const features = [
   {
@@ -100,8 +97,6 @@ const features = [
 export default function FeaturesSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
-  const [size3D, setSize3D] = useState(200);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setVisible(true); },
@@ -111,13 +106,6 @@ export default function FeaturesSection() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const update = () => setSize3D(window.innerWidth < 640 ? 150 : 200);
-    update();
-    window.addEventListener('resize', update);
-    return () => window.removeEventListener('resize', update);
-  }, []);
-
   return (
     <section ref={sectionRef} className="mob-section" style={{ background: '#000', width: '100%', position: 'relative', overflow: 'hidden', padding: '7rem 1rem' }}>
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(0,229,255,0.3), transparent)' }} />
@@ -125,9 +113,6 @@ export default function FeaturesSection() {
       <div style={{ position: 'relative', zIndex: 10, maxWidth: '1100px', margin: '0 auto' }}>
         {/* Заголовок */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '3rem', marginBottom: '4rem', flexWrap: 'wrap', opacity: visible ? 1 : 0, transform: visible ? 'none' : 'translateY(30px)', transition: 'opacity 0.7s, transform 0.7s' }}>
-          <div className="mob-3d" style={{ flex: '0 0 200px' }}>
-            <Scene3D shape="icosahedron" size={size3D} color="#00e5ff" opacity={0.8} />
-          </div>
           <div style={{ flex: 1, minWidth: '260px' }}>
             <div style={{ display: 'inline-block', marginBottom: '1rem', padding: '4px 12px', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.25em', color: '#00e5ff', border: '1px solid rgba(0,229,255,0.2)' }}>ЧТО ВХОДИТ</div>
             <h2 style={{ fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(1.8rem, 4vw, 3rem)', color: '#fff', lineHeight: 1.1 }}>

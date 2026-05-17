@@ -29,7 +29,7 @@ const OrderSchema = z.object({
   contact:     z.string().min(1).max(100),
   siteType:    z.string().max(50).optional(),
   description: z.string().max(2000).optional(),
-  budget:      z.enum(['launch', 'discuss']).optional(),
+  budget:      z.enum(['landing', 'multipage', 'discuss']).optional(),
 });
 
 /* ── Экранирование для HTML-режима Telegram ───────── */
@@ -78,8 +78,9 @@ export async function POST(req: NextRequest) {
   });
 
   const budgetLabels: Record<string, string> = {
-    launch:  'Запуск — 15 000 ₽ (первые 2 места)',
-    discuss: 'Обсудить индивидуально',
+    landing:    'Лендинг / 1 страница',
+    multipage:  'Многостраничный сайт',
+    discuss:    'Обсудить индивидуально',
   };
 
   const text = [
