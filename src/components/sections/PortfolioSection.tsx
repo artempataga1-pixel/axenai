@@ -13,6 +13,7 @@ const projects = [
   { title: 'LUMIÈRE BEAUTÉ', desc: 'Премиальный салон красоты — маникюр, окрашивание, spa. Лендинг с онлайн-записью.', tags: ['Лендинг', 'Салон красоты'], href: 'https://lumiere-tawny.vercel.app/' },
   { title: 'CleanPro', desc: 'Клининговая компания с калькулятором стоимости — квартиры, дома, послеремонтная уборка.', tags: ['Лендинг', 'Клининг'], href: 'https://cleaning-landing-pi.vercel.app/' },
   { title: 'APEX DETAIL', desc: 'Премиальный детейлинг-центр — полировка, керамика, PPF-защита. Лендинг под запись клиентов.', tags: ['Лендинг', 'Автодетейлинг'], href: 'https://apex-detail-pabl.vercel.app/' },
+  { title: 'Братья Разумовские', desc: 'Юридическая компания в Москве — корпоративное право, сделки, защита бизнеса. Лендинг с акцентом на доверие и экспертизу.', tags: ['Лендинг', 'Юридические услуги'], href: 'https://demo-site-delta-lac.vercel.app' },
 ];
 
 export default function PortfolioSection() {
