@@ -1,9 +1,13 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
 const Scene3D = dynamic(() => import('@/components/ui/Scene3D'), { ssr: false });
+
+const THUMB = (url: string) =>
+  `https://image.thum.io/get/width/800/crop/500/noanimate/${url}`;
 
 const projects = [
   { title: 'PROстранство', desc: 'Агентство e-commerce маркетинга — комплексное продвижение на маркетплейсах, аналитика и рост продаж.', tags: ['Многостраничный', 'E-commerce'], href: 'https://prostranstvoecom.ru' },
@@ -78,18 +82,17 @@ export default function PortfolioSection() {
               >
                 <div className="process-card-inner" style={{ padding: 0 }}>
                   {/* Preview */}
-                  <div className="portfolio-preview">
-                    <div className="portfolio-grid-bg" />
-                    <div className="portfolio-icon-wrap">
-                      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                        <rect x="1" y="1" width="26" height="26" stroke="currentColor" strokeWidth="1" fill="none"/>
-                        <rect x="5" y="5" width="18" height="18" stroke="currentColor" strokeWidth="0.6" fill="none" opacity="0.5"/>
-                        <line x1="1" y1="8" x2="27" y2="8" stroke="currentColor" strokeWidth="0.6" opacity="0.4"/>
-                        <circle cx="14" cy="17" r="3" stroke="currentColor" strokeWidth="0.8" fill="none" opacity="0.7"/>
-                        <line x1="14" y1="8" x2="14" y2="14" stroke="currentColor" strokeWidth="0.6" opacity="0.4"/>
-                      </svg>
-                    </div>
-                    <span className="portfolio-soon-label">ПРОЕКТ</span>
+                  <div className="portfolio-preview" style={{ position: 'relative', overflow: 'hidden', background: '#0a0f14' }}>
+                    <Image
+                      src={THUMB(p.href)}
+                      alt={p.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 400px"
+                      style={{ objectFit: 'cover', objectPosition: 'top', transition: 'transform 0.5s ease' }}
+                      className="portfolio-thumb"
+                      unoptimized
+                    />
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.7) 100%)', pointerEvents: 'none' }} />
                   </div>
 
                   {/* Инфо */}

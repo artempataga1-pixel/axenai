@@ -373,73 +373,18 @@ body::before {
 /* ── Portfolio cards ────────────────────────────────────────────────── */
 
 .portfolio-preview {
-  height: 180px;
-  background: #050a12;
+  height: 200px;
   position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  transition: background 0.3s;
+  background: #050a12;
 }
 
-.portfolio-card-outer:hover .portfolio-preview {
-  background: #060d18;
+.portfolio-thumb {
+  transition: transform 0.5s ease !important;
 }
 
-.portfolio-grid-bg {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(0,180,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,180,255,0.05) 1px, transparent 1px);
-  background-size: 30px 30px;
-  transition: opacity 0.3s;
-}
-
-.portfolio-card-outer:hover .portfolio-grid-bg {
-  opacity: 1.6;
-}
-
-.portfolio-icon-wrap {
-  position: relative;
-  z-index: 1;
-  width: 52px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(0, 229, 255, 0.35);
-  border: 1px solid rgba(0, 229, 255, 0.15);
-  background: rgba(0, 180, 255, 0.05);
-  clip-path: polygon(6px 0%, 100% 0%, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0% 100%, 0% 6px);
-  transition: color 0.3s, border-color 0.3s, box-shadow 0.3s;
-}
-
-.portfolio-card-outer:hover .portfolio-icon-wrap {
-  color: rgba(0, 229, 255, 0.9);
-  border-color: rgba(0, 229, 255, 0.5);
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
-}
-
-.portfolio-card-outer:hover .portfolio-icon-wrap svg {
-  filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.7));
-}
-
-.portfolio-soon-label {
-  position: relative;
-  z-index: 1;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
-  color: rgba(0, 229, 255, 0.3);
-  letter-spacing: 0.2em;
-  transition: color 0.3s;
-}
-
-.portfolio-card-outer:hover .portfolio-soon-label {
-  color: rgba(0, 229, 255, 0.7);
+.portfolio-card-outer:hover .portfolio-thumb {
+  transform: scale(1.06) !important;
 }
 
 .portfolio-tag {
