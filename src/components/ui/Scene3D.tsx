@@ -31,6 +31,9 @@ export default function Scene3D({
     let animId: number;
     let renderer: import('three').WebGLRenderer;
     let active = true;
+    let paused = false;
+    let rafPaused = false;
+    let visObserver: IntersectionObserver;
 
     (async () => {
       const THREE = await import('three');
@@ -45,6 +48,12 @@ export default function Scene3D({
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.setClearColor(0x000000, 0);
       mount.appendChild(renderer.domElement);
+
+      visObserver = new IntersectionObserver(
+        ([entry]) => { rafPaused = !entry.isIntersecting; },
+        { threshold: 0 }
+      );
+      visObserver.observe(mount);
 
       const scene  = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(60, W / H, 0.1, 100);
@@ -114,6 +123,7 @@ export default function Scene3D({
       /* ── Анимация ───────────────────────────────────────── */
       const animate = () => {
         animId = requestAnimationFrame(animate);
+        if (rafPaused) { return; }
 
         // Плавное вращение
         wireMesh.rotation.x  += 0.003;
@@ -142,6 +152,7 @@ export default function Scene3D({
     return () => {
       active = false;
       cancelAnimationFrame(animId);
+      if (visObserver) visObserver.disconnect();
       if (renderer && mount.contains(renderer.domElement)) {
         mount.removeChild(renderer.domElement);
         renderer.dispose();

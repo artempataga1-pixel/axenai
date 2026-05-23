@@ -130,7 +130,7 @@ export function HeroFuturistic() {
         uPointer.value.set(mouse.x, mouse.y);
 
         // Fade in
-        opacity = THREE.MathUtils.lerp(opacity, 1, 0.04);
+        opacity = THREE.MathUtils.lerp(opacity, 1, 0.08);
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (mat as any).opacity = opacity;
 
@@ -154,6 +154,18 @@ export function HeroFuturistic() {
 
   return (
     <div className="h-svh relative overflow-hidden bg-black">
+
+      {/* ── Навигация ──────────────────────────────────────────────── */}
+      <nav className="hero-nav">
+        <span className="hero-nav-logo">AXEN<span style={{ color: '#00ff41' }}>_AI</span></span>
+        <div className="hero-nav-links">
+          <button className="hero-nav-link" onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}>Портфолио</button>
+          <button className="hero-nav-link" onClick={() => document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })}>Процесс</button>
+          <button className="hero-nav-link" onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}>Что входит</button>
+          <button className="hero-nav-link" onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })}>FAQ</button>
+          <a href="/order" className="hero-nav-cta">Заказать →</a>
+        </div>
+      </nav>
 
       {/* ── WebGPU Canvas ─────────────────────────────────────── */}
       <div ref={canvasRef} className="absolute inset-0 z-0" />
@@ -190,16 +202,6 @@ export function HeroFuturistic() {
           </div>
         </div>
 
-        {/* CTA кнопки */}
-        <div
-          className="hero-btns mt-8 flex flex-col sm:flex-row gap-3 pointer-events-auto"
-          style={{ animationDelay: '0.85s' }}
-        >
-          <button className="hero-btn-cyan" onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}>▶ Смотреть каталог</button>
-          <Link href="/order">
-            <button className="hero-btn-green">⬡ Заказать сайт</button>
-          </Link>
-        </div>
       </div>
 
       {/* ── Scroll pill ───────────────────────────────────────── */}

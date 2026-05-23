@@ -23,6 +23,7 @@ export default function ProcessSection() {
 
   return (
     <section
+      id="process"
       ref={sectionRef}
       className="mob-section"
       style={{ background: '#000', width: '100%', position: 'relative', overflow: 'hidden', padding: '7rem 1rem' }}

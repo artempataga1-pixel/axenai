@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
+import ScrollToTop from "@/components/ui/ScrollToTop";
+import CookieBanner from "@/components/ui/CookieBanner";
 
 export const metadata: Metadata = {
   title: "AXEN AI — Сайты созданные искусственным интеллектом",
@@ -23,6 +25,8 @@ export default function RootLayout({
       <body className="antialiased" style={{ background: '#000', color: '#e2e8f0', minHeight: '100vh', width: '100%' }}>
         <Header />
         <main style={{ width: '100%' }}>{children}</main>
+        <ScrollToTop />
+        <CookieBanner />
       </body>
     </html>
   );

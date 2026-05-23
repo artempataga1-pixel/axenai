@@ -20,7 +20,7 @@ export default function CtaSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="mob-section" style={{ background: '#000', width: '100%', position: 'relative', overflow: 'hidden', padding: '7rem 1rem 4rem' }}>
+    <section id="contacts" ref={sectionRef} className="mob-section" style={{ background: '#000', width: '100%', position: 'relative', overflow: 'hidden', padding: '7rem 1rem 4rem' }}>
       {/* Сетка */}
       <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', backgroundImage: `linear-gradient(rgba(0,180,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,180,255,0.04) 1px, transparent 1px)`, backgroundSize: '60px 60px' }} />
       {/* Свечение */}
@@ -85,6 +85,10 @@ export default function CtaSection() {
       <div style={{ position: 'relative', zIndex: 10, maxWidth: '1100px', margin: '5rem auto 0', paddingTop: '2rem', borderTop: '1px solid rgba(0,180,255,0.1)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem' }}>
         <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', color: '#00e5ff', letterSpacing: '0.15em' }}>AXEN_AI</span>
         <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.1em' }}>© 2026 · SYSTEM_STATUS: ONLINE</span>
+        <div style={{ display: 'flex', gap: '1rem' }}>
+          <a href="/privacy" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.2)', textDecoration: 'none', letterSpacing: '0.08em' }}>Политика конф.</a>
+          <a href="/oferta" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.2)', textDecoration: 'none', letterSpacing: '0.08em' }}>Договор оферты</a>
+        </div>
         <div style={{ display: 'flex', gap: '1.5rem' }}>
           <a href="https://t.me/m/64Dm3Vf7MDQy" target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: 'rgba(0,229,255,0.5)', textDecoration: 'none' }}>@axenai</a>
           <a href="https://max.ru/u/f9LHodD0cOIviRaJ3XgXI4U66OOyCmSuPwwMMuVrLMDYjKs-Grm1f7JcbhU" target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: 'rgba(0,229,255,0.5)', textDecoration: 'none' }}>Max</a>
