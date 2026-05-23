@@ -7,9 +7,9 @@ import dynamic from 'next/dynamic';
 const Scene3D = dynamic(() => import('@/components/ui/Scene3D'), { ssr: false });
 
 const stats = [
-  { value: '72ч', label: 'минимальный срок' },
-  { value: '7+', label: 'ниш охвачено' },
-  { value: '100%', label: 'передача прав' },
+  { value: '72ч', label: 'от брифа до готового сайта' },
+  { value: '7', label: 'проектов в портфолио' },
+  { value: '100%', label: 'права на код — ваши' },
 ];
 
 export default function LaunchOfferSection() {
@@ -63,14 +63,14 @@ export default function LaunchOfferSection() {
           </div>
 
           <h2 style={{ fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 1.1, color: '#fff', marginBottom: '1rem' }}>
-            Сайты, которые{' '}
-            <span style={{ color: '#00e5ff', textShadow: '0 0 30px rgba(0,229,255,0.5)' }}>продают.</span>
-            <br />Не просто выглядят.
+            Сайт либо удерживает{' '}
+            <span style={{ color: '#00e5ff', textShadow: '0 0 30px rgba(0,229,255,0.5)' }}>за 8 секунд.</span>
+            <br />Либо нет.
           </h2>
 
           <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1rem', lineHeight: 1.75, marginBottom: '2rem', maxWidth: '440px' }}>
-            Каждый сайт — это не набор блоков из шаблона. Продуманная структура,
-            тексты под вашу аудиторию и дизайн, который работает на конверсию.
+            Первый экран — это когда человек ещё не решил, нужно ли ему это.
+            Мы делаем так, чтобы он остался. Каждый элемент с конкретной задачей — не для красоты.
           </p>
 
           {/* Статистика */}
@@ -86,9 +86,9 @@ export default function LaunchOfferSection() {
           {/* Что входит */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '2rem' }}>
             {[
-              'Уникальный дизайн под нишу — не шаблон',
-              'ИИ-копирайтинг с фокусом на конверсию',
-              'Домен, хостинг, SSL — настроим сами',
+              'Дизайн с нуля — не тема из маркетплейса',
+              'Тексты пишем сами, не вставляем заглушки',
+              'Домен и хостинг берём на себя. Ключи — твои.',
             ].map((t, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <span style={{ color: '#00e5ff', fontSize: '0.8rem', textShadow: '0 0 8px #00e5ff' }}>◈</span>

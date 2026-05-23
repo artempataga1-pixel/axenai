@@ -314,7 +314,7 @@ function HeroCard() {
             animate={mounted ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.7 }}
           >
-            Сайты созданные искусственным интеллектом
+            72 часа — и сайт готов. Твой, без оговорок.
           </motion.p>
 
           <motion.p
@@ -324,8 +324,8 @@ function HeroCard() {
             animate={mounted ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.85 }}
           >
-            Профессиональные сайты для бизнеса — за 3–7 дней,<br className="hidden sm:block" />
-            с уникальным дизайном и современным кодом.
+            Заполняешь форму — на следующий день видишь черновик.<br className="hidden sm:block" />
+            Говоришь что менять — вносим. Готово.
           </motion.p>
 
           {/* CTA кнопки */}

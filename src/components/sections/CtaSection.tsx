@@ -37,16 +37,16 @@ export default function CtaSection() {
           style={{ opacity: visible ? 1 : 0, transform: visible ? 'none' : 'translateY(40px)', transition: 'opacity 0.9s, transform 0.9s' }}
         >
           <div style={{ display: 'inline-block', marginBottom: '1.5rem', padding: '4px 14px', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.25em', color: '#00e5ff', border: '1px solid rgba(0,229,255,0.2)' }}>
-            ОСТАЛИСЬ ВОПРОСЫ? ПРОСТО НАПИШИ
+            НАПИШИ — ОТВЕТИМ БЫСТРО
           </div>
 
           <h2 style={{ fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#fff', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-            Твой сайт может быть готов{' '}
+            Твой сайт будет готов{' '}
             <span style={{ color: '#00e5ff', textShadow: '0 0 40px rgba(0,229,255,0.4)' }}>через 72 часа</span>
           </h2>
 
           <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '1rem', lineHeight: 1.8, maxWidth: '480px', margin: '0 auto 2.5rem' }}>
-            Оставь заявку — свяжемся в течение 15 минут, обсудим задачу и назовём точную стоимость. Без обязательств.
+            Свяжемся за 15 минут. Скажем честно, сколько это стоит и подходим ли под твою задачу. Если нет — так и скажем, без лишних встреч.
           </p>
 
           <div className="mob-btns" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -55,7 +55,7 @@ export default function CtaSection() {
                 style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '1rem 2.5rem', background: 'rgba(0,180,255,0.1)', border: '1.5px solid rgba(0,229,255,0.7)', color: '#00e5ff', cursor: 'pointer', boxShadow: '0 0 30px rgba(0,180,255,0.2)', transition: 'all 0.3s' }}
                 onMouseEnter={e => { const b = e.currentTarget; b.style.background = 'rgba(0,180,255,0.22)'; b.style.boxShadow = '0 0 50px rgba(0,180,255,0.45)'; }}
                 onMouseLeave={e => { const b = e.currentTarget; b.style.background = 'rgba(0,180,255,0.1)'; b.style.boxShadow = '0 0 30px rgba(0,180,255,0.2)'; }}
-              >Оставить заявку →</button>
+              >Написать — это бесплатно →</button>
             </Link>
             <a
               href="https://t.me/m/64Dm3Vf7MDQy"

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 
 const features = [
   {
-    title: 'Дизайн под твой бренд',
+    title: 'Дизайн под твою нишу. Не под шаблон.',
     desc: 'Не тема из WordPress. Уникальный визуал под твою нишу — ИИ адаптирует стиль и цвета.',
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
@@ -18,7 +18,7 @@ const features = [
   },
   {
     title: 'Тексты, которые продают',
-    desc: 'Копирайтинг с фокусом на конверсию. Берёшь как есть или дорабатываешь.',
+    desc: 'ИИ пишет первую версию — дорабатываем вместе. Берёшь как есть или говоришь что менять. Без доплаты.',
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
         <rect x="3" y="5" width="30" height="26" rx="0" stroke="currentColor" strokeWidth="1.2" fill="none"/>
@@ -32,7 +32,7 @@ const features = [
     ),
   },
   {
-    title: 'Мобильная версия',
+    title: 'Телефон — это и есть сайт',
     desc: 'Все сайты адаптивны по умолчанию. Проверяем на реальных устройствах.',
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
@@ -62,7 +62,7 @@ const features = [
     ),
   },
   {
-    title: 'Форма заявки / интеграции',
+    title: 'Клиент нажал — ты уже знаешь',
     desc: 'Контактные формы, CRM, WhatsApp, Telegram — настраиваем по запросу.',
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
@@ -116,11 +116,11 @@ export default function FeaturesSection() {
           <div style={{ flex: 1, minWidth: '260px' }}>
             <div style={{ display: 'inline-block', marginBottom: '1rem', padding: '4px 12px', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.25em', color: '#00e5ff', border: '1px solid rgba(0,229,255,0.2)' }}>ЧТО ВХОДИТ</div>
             <h2 style={{ fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(1.8rem, 4vw, 3rem)', color: '#fff', lineHeight: 1.1 }}>
-              Не список технологий —{' '}
-              <span style={{ color: '#00e5ff' }}>реальная ценность</span>
+              Что ты получаешь —{' '}
+              <span style={{ color: '#00e5ff' }}>без жаргона</span>
             </h2>
             <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.95rem', marginTop: '0.75rem' }}>
-              Каждый сайт от AXEN AI работает на тебя с первого дня.
+              Конкретно. По делу.
             </p>
           </div>
         </div>
