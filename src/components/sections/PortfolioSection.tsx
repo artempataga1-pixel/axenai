@@ -6,18 +6,15 @@ import dynamic from 'next/dynamic';
 
 const Scene3D = dynamic(() => import('@/components/ui/Scene3D'), { ssr: false });
 
-const THUMB = (url: string) =>
-  `https://image.thum.io/get/width/800/crop/500/noanimate/${url}`;
-
 const projects = [
-  { title: 'PROстранство', desc: 'Агентство e-commerce маркетинга — комплексное продвижение на маркетплейсах, аналитика и рост продаж.', tags: ['Многостраничный', 'E-commerce'], href: 'https://prostranstvoecom.ru' },
-  { title: 'Psyche', desc: 'Онлайн-практика психолога — лендинг с записью на сессии, описанием подходов и форматов работы.', tags: ['Лендинг', 'Психология'], href: 'https://project-psyche-1.vercel.app' },
-  { title: 'Свежий Климат', desc: 'Строительная компания — фасадные работы, внутренняя отделка под ключ, утепление.', tags: ['Лендинг', 'Строительство'], href: 'https://svezhiyklimat.vercel.app/' },
-  { title: 'NOIR Barbershop', desc: 'Мужской барбершоп в Москве — стрижки, бритьё, spa. Лендинг с онлайн-записью.', tags: ['Лендинг', 'Барбершоп'], href: 'https://barbershop-noir.vercel.app/' },
-  { title: 'LUMIÈRE BEAUTÉ', desc: 'Премиальный салон красоты — маникюр, окрашивание, spa. Лендинг с онлайн-записью.', tags: ['Лендинг', 'Салон красоты'], href: 'https://lumiere-tawny.vercel.app/' },
-  { title: 'CleanPro', desc: 'Клининговая компания с калькулятором стоимости — квартиры, дома, послеремонтная уборка.', tags: ['Лендинг', 'Клининг'], href: 'https://cleaning-landing-pi.vercel.app/' },
-  { title: 'APEX DETAIL', desc: 'Премиальный детейлинг-центр — полировка, керамика, PPF-защита. Лендинг под запись клиентов.', tags: ['Лендинг', 'Автодетейлинг'], href: 'https://apex-detail-pabl.vercel.app/' },
-  { title: 'Братья Разумовские', desc: 'Юридическая компания в Москве — корпоративное право, сделки, защита бизнеса. Лендинг с акцентом на доверие и экспертизу.', tags: ['Лендинг', 'Юридические услуги'], href: 'https://demo-site-delta-lac.vercel.app' },
+  { title: 'PROстранство', desc: 'Агентство e-commerce маркетинга — комплексное продвижение на маркетплейсах, аналитика и рост продаж.', tags: ['Многостраничный', 'E-commerce'], href: 'https://prostranstvoecom.ru', img: '/portfolio/prostranstvo.jpg' },
+  { title: 'Psyche', desc: 'Онлайн-практика психолога — лендинг с записью на сессии, описанием подходов и форматов работы.', tags: ['Лендинг', 'Психология'], href: 'https://project-psyche-1.vercel.app', img: '/portfolio/psyche.jpg' },
+  { title: 'Свежий Климат', desc: 'Строительная компания — фасадные работы, внутренняя отделка под ключ, утепление.', tags: ['Лендинг', 'Строительство'], href: 'https://svezhiyklimat.vercel.app/', img: '/portfolio/svezhiy.jpg' },
+  { title: 'NOIR Barbershop', desc: 'Мужской барбершоп в Москве — стрижки, бритьё, spa. Лендинг с онлайн-записью.', tags: ['Лендинг', 'Барбершоп'], href: 'https://barbershop-noir.vercel.app/', img: '/portfolio/noir.jpg' },
+  { title: 'LUMIÈRE BEAUTÉ', desc: 'Премиальный салон красоты — маникюр, окрашивание, spa. Лендинг с онлайн-записью.', tags: ['Лендинг', 'Салон красоты'], href: 'https://lumiere-tawny.vercel.app/', img: '/portfolio/lumiere.jpg' },
+  { title: 'CleanPro', desc: 'Клининговая компания с калькулятором стоимости — квартиры, дома, послеремонтная уборка.', tags: ['Лендинг', 'Клининг'], href: 'https://cleaning-landing-pi.vercel.app/', img: '/portfolio/cleanpro.jpg' },
+  { title: 'APEX DETAIL', desc: 'Премиальный детейлинг-центр — полировка, керамика, PPF-защита. Лендинг под запись клиентов.', tags: ['Лендинг', 'Автодетейлинг'], href: 'https://apex-detail-pabl.vercel.app/', img: '/portfolio/apex.jpg' },
+  { title: 'Братья Разумовские', desc: 'Юридическая компания в Москве — корпоративное право, сделки, защита бизнеса. Лендинг с акцентом на доверие и экспертизу.', tags: ['Лендинг', 'Юридические услуги'], href: 'https://demo-site-delta-lac.vercel.app', img: '/portfolio/razumovskie.jpg' },
 ];
 
 export default function PortfolioSection() {
@@ -84,15 +81,14 @@ export default function PortfolioSection() {
                   {/* Preview */}
                   <div className="portfolio-preview" style={{ position: 'relative', overflow: 'hidden', background: '#0a0f14' }}>
                     <Image
-                      src={THUMB(p.href)}
+                      src={p.img}
                       alt={p.title}
                       fill
                       sizes="(max-width: 640px) 100vw, 400px"
-                      style={{ objectFit: 'cover', objectPosition: 'top', transition: 'transform 0.5s ease' }}
+                      style={{ objectFit: 'cover', objectPosition: 'top' }}
                       className="portfolio-thumb"
-                      unoptimized
                     />
-                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.7) 100%)', pointerEvents: 'none' }} />
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.65) 100%)', pointerEvents: 'none' }} />
                   </div>
 
                   {/* Инфо */}
